@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Color Change</title>
+</head>
+<body>
+    <h1>Change the buttons text color random value</h1>
+  <button id="btn" onclick="changeColor()">Click here to change my color</button>
+  <button id="btn-2" onclick="changeColor2()"> Click me to change my color to an array value!</button>
+</body>
+</html>
+
+<script>
+    var button = document.getElementById("btn");
+    var button2 = document.getElementById("btn-2")
+    var count = 0
+    function changeColor() {
+        
+        var color = randomColorGenerator()
+            button.style.color = color
+        
+    }
+
+    function randomColorGenerator() {
+        var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
+        var colorCode = "#"
+        for(let i = 0; i < 6; i++){
+            var randomNumber = Math.floor(Math.random() * 16)
+            colorCode += numberArray[randomNumber]
+        }
+        return colorCode
+    }
+
+    function changeColor2(){
+        
+        var colorArray = ["red", "green", "blue", "yellow","orange"]
+        if(count == 5){
+            count = 0
+        }
+        button2.style.color = colorArray[count]
+        count++
+    }
+
+</script>

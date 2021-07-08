@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #btn{
+                height: 50px;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="h1">
+            The buttons color changes to a random value when it is clicked! But
+            only two times!
+        </h1>
+        <button id="btn" onclick="changeColor()" >
+            Click here to change my color!
+        </button>
+    </body>
+</html>
+
+<script>
+    var h1 = document.getElementById("h1");
+    var count = 0;
+
+    
+    function changeColor() {
+        
+        var color = randomColorGenerator()
+        if (count % 2 == 0) {
+            h1.style.color = color
+        }
+        count++
+    }
+
+    function randomColorGenerator() {
+        var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
+        var colorCode = "#"
+        for(let i = 0; i < 6; i++){
+            var randomNumber = Math.floor(Math.random() * 16)
+            colorCode += numberArray[randomNumber]
+        }
+        return colorCode
+    }
+</script>
