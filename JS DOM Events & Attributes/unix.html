@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Unix</title>
+    </head>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Ubuntu", sans-serif;
+        }
+        html,
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .main1 {
+            background: #e3dadb;
+            width: 350px;
+            height: 260px;
+            margin: 25px 0 50px 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .img1 {
+            width: 80px;
+            margin: 20px 0 15px 0;
+        }
+        .name1 {
+            font-size: 30px;
+            font-weight: 1000;
+            margin: 0 0 20px 0;
+            color: #010182;
+        }
+        .about1 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .main2 {
+            width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 105px;
+        }
+        .img2 {
+            width: 85px;
+            margin: 20px 0 15px 0;
+        }
+        .main2 > div {
+            position: relative;
+            top: 0;
+            margin: 0 0 0 10px;
+            height: 100%;
+        }
+        .name2 {
+            color: #ce0108;
+            font-weight: bold;
+            font-size: 22px;
+            margin: 0 0 15px 15px;
+        }
+        .about2 {
+            font-weight: bold;
+            font-size: 13px;
+            margin: 0 0 0 15px;
+        }
+
+        .main3 {
+            background: #d35500;
+            width: 800px;
+            height: 100px;
+            margin: 60px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .main3 > div {
+            width: 300px;
+        }
+        .name3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            padding: 10px 20px 10px 20px;
+        }
+        .about3 {
+            padding: 10px 20px 10px 20px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        #name3::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 70px;
+            background: #000;
+            right: 50%;
+            top: 15px;
+        }
+        #name3-1,
+        #about3-1 {
+            text-align: end;
+        }
+    </style>
+    <body>
+        <button id="btn" onclick="createWebPage()">Create Page</button>
+    </body>
+</html>
+
+<script>
+    function createWebPage() {
+        var body = document.querySelector("body");
+
+        var main1 = document.createElement("div");
+        main1.setAttribute("class", "main1");
+        body.appendChild(main1);
+
+        var img1 = document.createElement("img");
+        img1.setAttribute(
+            "src",
+            "https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/linus.jpg"
+        );
+        img1.setAttribute("alt", "Linus Trovalds image");
+        img1.setAttribute("class", "img1");
+        main1.appendChild(img1);
+
+        var name1 = document.createElement("div");
+        name1.setAttribute("class", "name1");
+        name1.innerHTML = "Linus Trovalds";
+        main1.appendChild(name1);
+
+        var about1 = document.createElement("div");
+        about1.setAttribute("class", "about1");
+        about1.innerHTML = "The creator of Linux & Git";
+        main1.appendChild(about1);
+
+        var main2 = document.createElement("div");
+        main2.setAttribute("class", "main2");
+        body.appendChild(main2);
+
+        var img2 = document.createElement("img");
+        img2.setAttribute("class", "img2");
+        img2.setAttribute(
+            "src",
+            "https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/khan.jpg"
+        );
+        img2.setAttribute("alt", "Sal Khan image");
+        main2.appendChild(img2);
+
+        var divInMain2 = document.createElement("div");
+        main2.appendChild(divInMain2);
+
+        var name2 = document.createElement("div");
+        name2.setAttribute("class", "name2");
+        name2.innerHTML = "Sal Khan";
+        divInMain2.appendChild(name2);
+
+        var about2 = document.createElement("div");
+        about2.setAttribute("class", "about2");
+        about2.innerHTML =
+            "Salman Khan is the founder of the Khan Academy which has a mission of providing a free world-class education for anyone, anywhere.";
+        divInMain2.appendChild(about2);
+
+        var main3 = document.createElement("div");
+        main3.setAttribute("class", "main3");
+        body.appendChild(main3);
+
+        var div1InMain3 = document.createElement("div");
+        main3.appendChild(div1InMain3);
+
+        var name3 = document.createElement("div");
+        name3.setAttribute("class", "name3")
+        name3.setAttribute("id", "name3")
+        name3.innerHTML = "Ken Thompson"
+        div1InMain3.appendChild(name3);
+
+        var about3 = document.createElement("div");
+        about3.setAttribute("class", "about3");
+        about3.innerHTML = "Designed and implemented the original Unix operating system"
+        div1InMain3.appendChild(about3);
+
+        var div2InMain3 = document.createElement("div");
+        main3.appendChild(div2InMain3);
+
+        var name3_1 = document.createElement("div")
+        name3_1.setAttribute("class", "name3")
+        name3_1.setAttribute("id", "name3-1")
+        name3_1.innerHTML = "Dennis Ritchie"
+        div2InMain3.appendChild(name3_1);
+
+        var about3_1 = document.createElement("div")
+        about3_1.setAttribute("class", "about3")
+        about3_1.setAttribute("id", "about3-1")
+        about3_1.innerHTML = "The creator of C Programming Language"
+        div2InMain3.appendChild(about3_1);
+
+        var button = document.getElementById("btn")
+        button.removeElement()
+
+
+    }
+</script>

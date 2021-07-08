@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random BG on Resizing Screen</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var body = document.querySelector('body')
+
+    window.addEventListener('resize', function(event) {
+        var color = "#"
+        for(var i=1; i <= 6; i++){
+            var randomNumber = Math.floor(Math.random()*9)
+            color += randomNumber
+        }
+        body.style.backgroundColor = color
+    })
+
+    
+</script>

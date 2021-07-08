@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Leaderboard</title>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                width: 455px;
+                margin-top: -350px !important;
+            }
+            .box-min,
+            .box-max {
+                display: inline-block;
+                width: 150px;
+                height: 100px;
+                font-size: 40px;
+                font-weight: bold;
+                border: 1px solid #000;
+                text-align: center;
+                padding-top: 25px;
+            }
+            .box-min {
+                background: #fe0000;
+                margin-right: 150px;
+            }
+            .box-max {
+                background: #00aa01;
+            }
+
+            .number {
+                width: 50px;
+                height: 50px;
+                border: 1px solid #000;
+                font-size: 22px;
+                text-align: center;
+                padding-top: 10px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .number-1 {
+                background: #668100;
+            }
+            .number-2 {
+                background: #ff6600;
+            }
+            .number-3 {
+                background: #810065;
+            }
+            .score {
+                text-align: center;
+            }
+            .sub-container {
+                width: 300px;
+                height: 100px;
+                margin-left: 130px;
+                display: grid;
+                grid-gap: 20px;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-areas:
+                    "output output output"
+                    "one two three"
+                    "four five six"
+                    "seven eight nine"
+                    "zero zero zero"
+                    "enter enter enter";
+            }
+            #output {
+                grid-area: output;
+                width: 190px;
+                height: 80px;
+                font-size: 20px;
+                font-weight: bold;
+                border: 1px solid #000;
+                background: #b3b3b3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #output > p {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            #one {
+                grid-area: one;
+            }
+            #two {
+                grid-area: two;
+            }
+            #three {
+                grid-area: three;
+            }
+            #four {
+                grid-area: four;
+            }
+            #five {
+                grid-area: five;
+            }
+            #six {
+                grid-area: six;
+            }
+            #seven {
+                grid-area: seven;
+            }
+            #eight {
+                grid-area: eight;
+            }
+            #nine {
+                grid-area: nine;
+            }
+            #zero {
+                grid-area: zero;
+                margin-left: 70px;
+            }
+            .enter {
+                grid-area: enter;
+                color: #fff;
+                background: #000;
+                width: 190px;
+                height: 50px;
+                text-align: center;
+                padding-top: 10px;
+                font-size: 22px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box-min" id="min">43</div>
+            <div class="box-max" id="max">2019</div>
+            <p class="score">SCORE</p>
+            <div class="sub-container">
+                <div id="output"><p>#</p></div>
+                <div
+                    class="number number-1"
+                    onclick="getNumber('1')"
+                    id="one"
+                >
+                    1
+                </div>
+                <div
+                    class="number number-2"
+                    onclick="getNumber('2')"
+                    id="two"
+                >
+                    2
+                </div>
+                <div
+                    class="number number-1"
+                    onclick="getNumber('3')"
+                    id="three"
+                >
+                    3
+                </div>
+                <div
+                    class="number number-2"
+                    onclick="getNumber('4')"
+                    id="four"
+                >
+                    4
+                </div>
+                <div
+                    class="number number-2"
+                    onclick="getNumber('5')"
+                    id="five"
+                >
+                    5
+                </div>
+                <div
+                    class="number number-2"
+                    onclick="getNumber('6')"
+                    id="six"
+                >
+                    6
+                </div>
+                <div
+                    class="number number-1"
+                    onclick="getNumber('7')"
+                    id="seven"
+                >
+                    7
+                </div>
+                <div
+                    class="number number-2"
+                    onclick="getNumber('8')"
+                    id="eight"
+                >
+                    8
+                </div>
+                <div
+                    class="number number-1"
+                    onclick="getNumber('9')"
+                    id="nine"
+                >
+                    9
+                </div>
+                <div
+                    class="number number-3"
+                    onclick="getNumber('0')"
+                    id="zero"
+                >
+                    0
+                </div>
+                <div class="enter" onclick="enter()">ENTER</div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    var number1 = document.getElementById("one").innerHTML / 1;
+    var number2 = document.getElementById("two").innerHTML / 1;
+    var number3 = document.getElementById("three").innerHTML / 1;
+    var number4 = document.getElementById("four").innerHTML / 1;
+    var number5 = document.getElementById("five").innerHTML / 1;
+    var number6 = document.getElementById("six").innerHTML / 1;
+    var number7 = document.getElementById("seven").innerHTML / 1;
+    var number8 = document.getElementById("eight").innerHTML / 1;
+    var number9 = document.getElementById("nine").innerHTML / 1;
+    var number0 = document.getElementById("zero").innerHTML / 1;
+
+    function getNumber(e) {
+        addNumberToOutput(e);
+    }
+
+    function addNumberToOutput(e) {
+        var output = document.getElementById("output");
+
+        if (output.innerHTML == "<p>#</p>") {
+            output.innerHTML = null;
+        }
+
+        output.append(e);
+    }
+
+    function enter() {
+        var output = document.getElementById("output");
+        var finalScore = output.innerHTML / 1;
+
+        compair(finalScore);
+
+        output.innerHTML = "<p>#</p>";
+    }
+
+    function compair(num) {
+        var min = document.getElementById("min").innerHTML / 1;
+        if (num < min) {
+            document.getElementById("min").innerHTML = `${num}`;
+        }
+
+        var max = document.getElementById("max").innerHTML / 1;
+        if (num > max) {
+            document.getElementById("max").innerHTML = `${num}`;
+        }
+    }
+</script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Country Continent</title>
+    </head>
+    <body>
+        <select id="country">
+            <option value="India">India</option>
+            <option value="United-States-of-America">
+                United States of America
+            </option>
+            <option value="China">China</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Australia">Australia</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="South-Africa">South Africa</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brazil">India</option>
+            <option value="Canada">Canada</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Sweden">Sweden</option>
+        </select>
+
+        <button onclick="getContinent()" id="btn">Find Continent</button>
+    </body>
+</html>
+
+<script>
+    function getContinent() {
+        var country = document.getElementById("country").value;
+        console.log("country:", country);
+
+        switch (country) {
+            case "India":
+                alert(`If the input is ${country} -> The continent is Asia`);
+                break;
+            case "United-States-of-America":
+                alert(
+                    `If the input is ${country} -> The continent is North America`
+                );
+                break;
+            case "China":
+                alert(`If the input is ${country} -> The continent is Asia`);
+                break;
+            case "Nepal":
+                alert(`If the input is ${country} -> The continent is Asia`);
+                break;
+            case "Australia":
+                alert(
+                    `If the input is ${country} -> The continent is Australia`
+                );
+                break;
+            case "France":
+                alert(`If the input is ${country} -> The continent is Europe`);
+                break;
+            case "Germany":
+                alert(`If the input is ${country} -> The continent is Europe`);
+                break;
+            case "South-Africa":
+                alert(`If the input is ${country} -> The continent is Africa`);
+                break;
+            case "Nigeria":
+                alert(`If the input is ${country} -> The continent is Africa`);
+                break;
+            case "Mexico":
+                alert(
+                    `If the input is ${country} -> The continent is South America`
+                );
+                break;
+            case "Argentina":
+                alert(
+                    `If the input is ${country} -> The continent is South America`
+                );
+                break;
+            case "Brazil":
+                alert(
+                    `If the input is ${country} -> The continent is South America`
+                );
+                break;
+            case "Canada":
+                alert(
+                    `If the input is ${country} -> The continent is North America`
+                );
+                break;
+            case "Singapore":
+                alert(`If the input is ${country} -> The continent is Asia`);
+                break;
+            case "Sweden":
+                alert(`If the input is ${country} -> The continent is Europe`);
+                break;
+        }
+    }
+</script>
