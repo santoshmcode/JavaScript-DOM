@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create a copy</title>
+    </head>
+    <body>
+        <h1>Create a copy</h1>
+        <p>Give a input separated by spaces</p>
+        <input id="input" onkeydown="createACopy(event)" type="text" />
+    </body>
+</html>
+
+<script>
+    function createACopy(e){
+        if(e.key == "Enter"){
+            var input = document.getElementById('input').value
+            var inputArray = input.trim().split(" ")
+            console.log("Input Array is");
+            console.log('inputArray:', inputArray)
+            
+
+            console.log("Copying Input Array to New Array");
+            var newArray = arrayCopy(inputArray)
+            console.log('newArray:', newArray)
+
+            console.log('Removing Last Element from New Array');
+            newArray.pop()
+            console.log('newArray:', newArray)
+
+            console.log('Input Array')
+            console.log('inputArray:', inputArray)
+            
+        }
+    }
+
+    function arrayCopy(array){
+        var newArray = [];
+        for(let i = 0; i < array.length; i++){
+            newArray.push(array[i]);
+        }
+        return newArray
+    }
+</script>
