@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inheritance Using Constructor Functions</title>
+    </head>
+    <body>
+        <h1>Inheritance Using Constructor Functions</h1>
+    </body>
+</html>
+
+<script>
+    function Child(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    const mySelf = new Child("santosh", 24);
+    Child.prototype.sisterName = function (name) {
+        this.sisterName = name;
+    };
+    mySelf.sisterName("Nisigandha");
+
+    Child.prototype.fatherName = "Krishna" 
+    Child.prototype.MotherName = "Meera" 
+    Child.prototype.grandFatherName = "Ram" 
+    Child.prototype.grandMotherName = "Radha" 
+    console.log("mySelf:", mySelf);
+</script>

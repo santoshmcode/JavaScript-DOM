@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inheritance Using Object.create</title>
+    </head>
+    <body>
+        <h1>Inheritance Using Object.create</h1>
+    </body>
+</html>
+
+<script>
+    const myGrandParent = {
+        grandFatherName: "Ram",
+        granMotherName: "Meera",
+        isGrandFatherAlive: function (yes) {
+            //pass boolean value
+            if (yes) {
+                console.log("Grandfather's age is 87");
+            } else {
+                console.log("Grandfather's age was 87");
+            }
+        },
+        isGrandMotherAlive: function (yes) {
+            //pass boolean value
+            if (yes) {
+                console.log("Grandmother's age is 87");
+            } else {
+                console.log("Grandmother's age was 87");
+            }
+        },
+    };
+
+    const parent = Object.setPrototypeOf(
+        {
+            fatherName: "Krishna",
+            motherName: "Radha",
+            fatherAge: 53,
+            motherAge: 50,
+        },
+        myGrandParent
+    );
+
+    const mySelf = Object.setPrototypeOf(
+        {
+            myName: "Santosh",
+            myAge: 24,
+            sisterName: "Nishigandha",
+            sisterAge: 22,
+        },
+        parent
+    );
+    
+    mySelf.isGrandMotherAlive(true)
+    console.log(mySelf.fatherName);
+    console.log(mySelf.sisterName);
+</script>
