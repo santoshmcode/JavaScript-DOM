@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Tour Manager</title>
+        <style>
+            img {
+                width: 90%;
+                height: 200px
+            }
+            #data{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Tour Manager</h1>
+        <form id="form">
+            <input type="text" id="name" placeholder="Name" />
+            <input type="number" id="rating" placeholder="Rating" />
+            <input type="text" id="img" placeholder="Image url" />
+        </form>
+        <button onclick="storeLocation()">Add Location</button>
+        <button onclick="showVisited()">Show Visited Location</button>
+
+        <div id="data"></div>
+    </body>
+</html>
+
+<script src="script.js"></script>
