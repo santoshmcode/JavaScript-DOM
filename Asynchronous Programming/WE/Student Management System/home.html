@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Manager System</title> 
+    <style>
+        #slideshow img{
+            width: 100%;
+            height: 150px;
+            object-fit:cover
+        }
+
+        #student-data{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            
+        }
+        #student-data  img{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home Page</h1>
+
+    <div id="slideshow"></div>
+    <button onclick="sortLTH()">Sort Low To High</button>
+    <button onclick="sortHTL()">Sort High to Low</button>
+    <div id="student-data"></div>
+</body>
+</html>
+
+<script src="home.js"></script>
