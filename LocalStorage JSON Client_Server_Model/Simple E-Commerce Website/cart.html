@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cart</title>
+        <link rel="stylesheet" href="style/cart.css" />
+    </head>
+    <body>
+        <h1>Complete Checkout</h1>
+        <div>
+            <p>Number of items: <span id="number">0</span></p>
+            <p id="n99">Total Price: <span id="total">0</span>&nbsp;&nbsp;</p>
+        </div>
+        <label for="promo">Promo Code</label>
+        <input type="text" id="promo" placeholder="MASAI30" />
+        <button id="apply" onclick="applyPromo()">Apply</button>
+        <div id="checkout"></div>
+        <button onclick="done()">Checkout</button>
+    </body>
+</html>
+
+<script src="script/cart.js"></script>

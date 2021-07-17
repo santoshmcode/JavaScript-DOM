@@ -1,0 +1,19 @@
+#checkout {
+    width: 300px;
+       
+}
+
+#checkout > div {
+    width: 280px;
+    border: 1px solid #000;
+    margin: 10px 0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#checkout img {
+    height: 150px;
+}
